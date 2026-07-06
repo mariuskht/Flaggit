@@ -43,7 +43,7 @@ struct ContentView: View {
                                 .font(.subheadline.weight(.heavy))
                             Text(localizedCountryName(for: countries[correctAnswer]))
                                 .multilineTextAlignment(.center)
-                                .frame(maxWidth: .infinity1)
+                                .frame(maxWidth: .infinity)
                                 .font(.largeTitle.weight(.semibold))
                                 .padding(.horizontal)
                         }
