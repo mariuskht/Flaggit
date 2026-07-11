@@ -10,11 +10,11 @@ import SwiftUI
 struct RegionView: View {
     @State private var presentedRegion: Region?
     private let selectableRegions: [(region: Region, image: String, title: String)] = [
-        (.europe, "america", "Europe"),
-        (.americas, "america", "America"),
-        (.asia, "america", "Asia"),
-        (.africa, "america", "Africa"),
-        (.oceania, "america", "Oceania")
+        (.europe, "europe", String(localized: "Europe")),
+        (.americas, "america", String(localized:"America")),
+        (.asia, "asia", String(localized:"Asia")),
+        (.africa, "africa", String(localized:"Africa")),
+        (.oceania, "oceania", String(localized:"Oceania"))
     ]
     
     private let columns = [
@@ -67,6 +67,7 @@ struct RegionView: View {
                     Image(entry.image)
                         .resizable()
                         .scaledToFit()
+                        .frame(maxHeight: 150)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)

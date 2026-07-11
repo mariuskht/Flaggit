@@ -7,6 +7,7 @@
 
 import AudioToolbox
 import SwiftUI
+import StoreKit
 internal import Combine
 
 struct ContentView: View {
@@ -16,11 +17,12 @@ struct ContentView: View {
     @State private var showingResult = false
     @State private var resultTitle = "0"
     @State private var score = 0
-    @State private var highscore = UserDefaults.standard.integer(forKey: "highscore")
+    @State private var highscore: Int
     @State private var selectedAnswer: Int? = nil
     @State private var countries: [Country]
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.requestReview) private var requestReview
 
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -33,6 +35,7 @@ struct ContentView: View {
         let pool = selectedRegion == .all ? Country.all : Country.all.filter { selectedRegion.rawValue == $0.region.rawValue }
         _countries = State(initialValue: Array(pool.shuffled().prefix(3)))
         _correctAnswer = State(initialValue: Int.random(in: 0...2))
+        self.highscore = UserDefaults.standard.integer(forKey: "\(selectedRegion)-highscore")
     }
     
     var countriesPool : [Country] {
@@ -75,9 +78,9 @@ struct ContentView: View {
                                     .frame(maxWidth: 200)
                                     .background(Color.appCard)
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
-                                    .overlay(RoundedRectangle(cornerRadius: 0)
-                                        .strokeBorder(Color.black.opacity(0.05), lineWidth: 1))
-                                    .overlay(RoundedRectangle(cornerRadius: 0)
+                                    .overlay(RoundedRectangle(cornerRadius: 16)
+                                        .strokeBorder(Color.black.opacity(0.2), lineWidth: 1))
+                                    .overlay(RoundedRectangle(cornerRadius: 16)
                                         .strokeBorder(borderColor(for: number), lineWidth: 4))
                                     .shadow(color: .black.opacity(0.06), radius: 8, y: 4)
                             }
@@ -149,9 +152,10 @@ struct ContentView: View {
             timeRemaining -= 1
             if timeRemaining == 0 {
                 resultTitle = String(localized: "Time Up!")
-                if(score > UserDefaults.standard.integer(forKey: "highscore")){
-                    UserDefaults.standard.set(score, forKey: "highscore")
+                if(score > UserDefaults.standard.integer(forKey: "\(selectedRegion)-highscore")){
+                    UserDefaults.standard.set(score, forKey: "\(selectedRegion)-highscore")
                     highscore = score
+                    presentReview()
                 }
                 showingResult = true
             }
@@ -194,6 +198,13 @@ struct ContentView: View {
             return .green
         }else{
             return .red
+        }
+    }
+    
+    private func presentReview() {
+        Task {
+            try await Task.sleep(for: .seconds(2))
+            requestReview()
         }
     }
 }
