@@ -167,9 +167,11 @@ struct ContentView: View {
         
         if number == correctAnswer {
             AudioServicesPlaySystemSound(1054)
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
             score+=1
         } else {
             AudioServicesPlaySystemSound(1053)
+            UINotificationFeedbackGenerator().notificationOccurred(.error)
             score -= 2
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
