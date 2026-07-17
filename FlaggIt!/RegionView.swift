@@ -65,8 +65,10 @@ struct RegionView: View {
                     presentedRegion = entry.region
                 } label: {
                     Image(entry.image)
+                        .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
+                        .foregroundStyle(Color.appAccent)
                         .frame(maxHeight: 150)
                 }
                 .frame(maxWidth: .infinity)
