@@ -31,6 +31,9 @@
 		291FC4AD2FFCF16E0082EE83 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FC4AC2FFCF16E0082EE83 /* RegionView.swift */; };
 		291FC4AE2FFCF16E0082EE83 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FC4AC2FFCF16E0082EE83 /* RegionView.swift */; };
 		291FC4AF2FFCF16E0082EE83 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291FC4AC2FFCF16E0082EE83 /* RegionView.swift */; };
+		29D869A5300B8F0D00CE90B1 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D869A4300B8F0800CE90B1 /* DifficultyView.swift */; };
+		29D869A6300B8F0D00CE90B1 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D869A4300B8F0800CE90B1 /* DifficultyView.swift */; };
+		29D869A7300B8F0D00CE90B1 /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D869A4300B8F0800CE90B1 /* DifficultyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,7 @@
 		291FC4A42FFB98A40082EE83 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		291FC4A82FFCE4F30082EE83 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		291FC4AC2FFCF16E0082EE83 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
+		29D869A4300B8F0800CE90B1 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 		291FC4842FFAE23A0082EE83 /* FlaggIt! */ = {
 			isa = PBXGroup;
 			children = (
+				29D869A4300B8F0800CE90B1 /* DifficultyView.swift */,
 				291FC47F2FFAE23A0082EE83 /* Assets.xcassets */,
 				291FC4802FFAE23A0082EE83 /* ContentView.swift */,
 				291FC4822FFAE23A0082EE83 /* GuessTheFlagApp.swift */,
@@ -287,6 +292,7 @@
 				291FC48F2FFAE23A0082EE83 /* GuessTheFlagApp.swift in Sources */,
 				291FC4A62FFB98A40082EE83 /* MenuView.swift in Sources */,
 				291FC4AF2FFCF16E0082EE83 /* RegionView.swift in Sources */,
+				29D869A5300B8F0D00CE90B1 /* DifficultyView.swift in Sources */,
 				291FC4A92FFCE4F30082EE83 /* Countries.swift in Sources */,
 				291FC4912FFAE23A0082EE83 /* ContentView.swift in Sources */,
 			);
@@ -301,6 +307,7 @@
 				291FC48A2FFAE23A0082EE83 /* GuessTheFlagApp.swift in Sources */,
 				291FC48C2FFAE23A0082EE83 /* ContentView.swift in Sources */,
 				291FC4AA2FFCE4F30082EE83 /* Countries.swift in Sources */,
+				29D869A7300B8F0D00CE90B1 /* DifficultyView.swift in Sources */,
 				291FC49B2FFAE2600082EE83 /* GuessTheFlagTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +321,7 @@
 				291FC4892FFAE23A0082EE83 /* ContentView.swift in Sources */,
 				291FC4AE2FFCF16E0082EE83 /* RegionView.swift in Sources */,
 				291FC4972FFAE2520082EE83 /* GuessTheFlagUITestsLaunchTests.swift in Sources */,
+				29D869A6300B8F0D00CE90B1 /* DifficultyView.swift in Sources */,
 				291FC4AB2FFCE4F30082EE83 /* Countries.swift in Sources */,
 				291FC4982FFAE2520082EE83 /* GuessTheFlagUITests.swift in Sources */,
 			);
